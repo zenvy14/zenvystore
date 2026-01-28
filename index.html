@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Zenvy</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<script src="https://js.stripe.com/v3/"></script>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+
+<header>
+<h1>Zenvy</h1>
+<p>Calm. Minimal. Essential.</p>
+</header>
+
+
+<section class="products">
+<div class="product">
+<h3>Ceramic Mug</h3>
+<p>$24</p>
+<button onclick="addToCart('Ceramic Mug', 24)">Add to Cart</button>
+</div>
+
+
+<div class="product">
+<h3>Incense Holder</h3>
+<p>$18</p>
+<button onclick="addToCart('Incense Holder', 18)">Add to Cart</button>
+</div>
+
+
+<div class="product">
+<h3>Minimal Vase</h3>
+<p>$36</p>
+<button onclick="addToCart('Minimal Vase', 36)">Add to Cart</button>
+</div>
+
+
+<div class="product">
+<h3>Soap Dish</h3>
+<p>$16</p>
+<button onclick="addToCart('Soap Dish', 16)">Add to Cart</button>
+</div>
+</section>
+
+
+<section class="cart">
+<h2>Cart</h2>
+<div id="cart-items"></div>
+<p id="cart-total">Total: $0</p>
+<button onclick="checkoutStripe()">Checkout</button>
+</section>
+
+
+<script src="cart.js"></script>
+</body>
+</html>
