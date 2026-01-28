@@ -45,6 +45,7 @@ body: JSON.stringify({ cartItems: cart })
 const data = await response.json();
 
 
-const stripe = Stripe('YOUR_PUBLISHABLE_KEY');
+const stripe = Stripe('pk_test_51Su0qPHTIZts3g2icNCQHbIQ1Csfmjb4R1j9pqbQuEdyXXl36p3CAFFSZvaPuky62amqJDVeEtzqqmMUgJnGcBjF00rqzjLzJR');
 stripe.redirectToCheckout({ sessionId: data.id });
+
 }
