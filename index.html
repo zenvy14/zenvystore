@@ -1,63 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<title>Zenvy</title>
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<script src="https://js.stripe.com/v3/"></script>
-<link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zenvy</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Montserrat", sans-serif;
+    }
+
+    body {
+      background: #ffffff;
+      color: #111;
+    }
+
+    header {
+      padding: 25px;
+      text-align: center;
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: 3px;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    .hero h1 {
+      font-size: 36px;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      color: #555;
+      font-size: 16px;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 30px;
+      padding: 50px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .product {
+      text-align: center;
+    }
+
+    .product img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      border-radius: 10px;
+      background: #f2f2f2;
+    }
+
+    .product h3 {
+      margin-top: 15px;
+      font-weight: 500;
+    }
+
+    .price {
+      margin: 8px 0 15px;
+      font-weight: 600;
+    }
+
+    .buy-btn {
+      display: inline-block;
+      padding: 12px 25px;
+      background: black;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      transition: 0.2s;
+      font-size: 14px;
+    }
+
+    .buy-btn:hover {
+      background: #333;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px;
+      font-size: 14px;
+      color: #777;
+    }
+  </style>
 </head>
+
 <body>
 
+<header>ZENVY</header>
 
-<header>
-<h1>Zenvy</h1>
-<p>Calm. Minimal. Essential.</p>
-</header>
-
+<section class="hero">
+  <h1>Modern Essentials</h1>
+  <p>Premium streetwear built for everyday comfort.</p>
+</section>
 
 <section class="products">
-<div class="product">
-<h3>Ceramic Mug</h3>
-<p>$24</p>
-<a href="https://buy.stripe.com/test_abc123xyz" class="buy-btn">
-  Buy Now
-</a>
-<button onclick="addToCart('Ceramic Mug', 24)">Add to Cart</button>
-</div>
 
+  <!-- Shirt 1 -->
+  <div class="product">
+    <img src="images/shirt1.jpg" alt="Zenvy Classic Tee">
+    <h3>Zenvy Classic Tee</h3>
+    <p class="price">$35</p>
+    <a href="YOUR_STRIPE_LINK_HERE" class="buy-btn">Buy Now</a>
+  </div>
 
-<div class="product">
-<h3>Incense Holder</h3>
-<p>$18</p>
-<button onclick="addToCart('Incense Holder', 18)">Add to Cart</button>
-</div>
+  <!-- Shirt 2 -->
+  <div class="product">
+    <img src="images/shirt2.jpg" alt="Zenvy Minimal Tee">
+    <h3>Zenvy Minimal Tee</h3>
+    <p class="price">$38</p>
+    <a href="YOUR_STRIPE_LINK_HERE" class="buy-btn">Buy Now</a>
+  </div>
 
+  <!-- Sweatshirt 1 -->
+  <div class="product">
+    <img src="images/sweatshirt1.jpg" alt="Zenvy Oversized Crew">
+    <h3>Zenvy Oversized Crew</h3>
+    <p class="price">$65</p>
+    <a href="YOUR_STRIPE_LINK_HERE" class="buy-btn">Buy Now</a>
+  </div>
 
-<div class="product">
-<h3>Minimal Vase</h3>
-<p>$36</p>
-<button onclick="addToCart('Minimal Vase', 36)">Add to Cart</button>
-</div>
+  <!-- Sweatshirt 2 -->
+  <div class="product">
+    <img src="images/sweatshirt2.jpg" alt="Zenvy Heavy Hoodie">
+    <h3>Zenvy Heavy Hoodie</h3>
+    <p class="price">$72</p>
+    <a href="YOUR_STRIPE_LINK_HERE" class="buy-btn">Buy Now</a>
+  </div>
 
-
-<div class="product">
-<h3>Soap Dish</h3>
-<p>$16</p>
-<button onclick="addToCart('Soap Dish', 16)">Add to Cart</button>
-</div>
 </section>
 
+<footer>
+  © 2026 Zenvy. All rights reserved.
+</footer>
 
-<section class="cart">
-<h2>Cart</h2>
-<div id="cart-items"></div>
-<p id="cart-total">Total: $0</p>
-<button onclick="checkoutStripe()">Checkout</button>
-</section>
-
-
-<script src="cart.js"></script>
 </body>
-
 </html>
