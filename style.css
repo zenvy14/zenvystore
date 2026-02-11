@@ -29,7 +29,7 @@ text-align: center;
 }
 
 
-button {
+a {
 padding: 10px 16px;
 border: none;
 border-radius: 999px;
@@ -42,4 +42,5 @@ cursor: pointer;
 .cart {
 padding: 20px;
 background: white;
+
 }
