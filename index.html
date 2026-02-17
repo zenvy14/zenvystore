@@ -1,113 +1,154 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Zenvy</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ZenTree</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: "Montserrat", sans-serif;
-    }
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
 
-    body {
-      background: #ffffff;
-      color: #111;
-    }
-    
-    header {
-      padding: 25px;
-      text-align: center;
-      font-size: 28px;
-      font-weight: 700;
-      letter-spacing: 3px;
-    }
+body {
+  background: #ffffff;
+  color: #111;
+  overflow-x: hidden;
+}
 
-    .hero {
-      text-align: center;
-      padding: 60px 20px;
-    }
+/* ---------------- HEADER ---------------- */
 
-    .hero h1 {
-      font-size: 36px;
-      margin-bottom: 15px;
-    }
+header {
+  padding: 25px;
+  text-align: center;
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
 
-    .hero p {
-      color: #555;
-      font-size: 16px;
-    }
+/* ---------------- HERO ---------------- */
 
-    .products {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 30px;
-      padding: 50px;
-      max-width: 1200px;
-      margin: auto;
-    }
+.hero {
+  text-align: center;
+  padding: 60px 20px;
+}
 
-    .product {
-      text-align: center;
-    }
+.hero h1 {
+  font-size: 36px;
+  margin-bottom: 15px;
+}
 
-    .product img {
-      width: 100%;
-      height: 400px;
-      object-fit: cover;
-      border-radius: 10px;
-      background: #f2f2f2;
-    }
+.hero p {
+  color: #555;
+  font-size: 16px;
+}
 
-    .product h3 {
-      margin-top: 15px;
-      font-weight: 500;
-    }
+/* ---------------- PRODUCTS ---------------- */
 
-    .price {
-      margin: 8px 0 15px;
-      font-weight: 600;
-    }
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+  padding: 50px;
+  max-width: 1200px;
+  margin: auto;
+}
 
-    .buy-btn {
-      display: inline-block;
-      padding: 12px 25px;
-      background: black;
-      color: white;
-      text-decoration: none;
-      border-radius: 6px;
-      transition: 0.2s;
-      font-size: 14px;
-    }
+.product {
+  text-align: center;
+}
 
-    .buy-btn:hover {
-      background: #333;
-    }
+.product img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 10px;
+  background: #f2f2f2;
+}
 
-    footer {
-      text-align: center;
-      padding: 40px;
-      font-size: 14px;
-      color: #777;
-    }
+.product h3 {
+  margin-top: 15px;
+  font-weight: 500;
+}
 
-    .sizes {
-      font-size: 14px;
-      color: #666;
-      margin-bottom: 15px;
-            }  
+.price {
+  margin: 8px 0 15px;
+  font-weight: 600;
+}
+
+.buy-btn {
+  display: inline-block;
+  padding: 12px 25px;
+  background: black;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: 0.2s;
+  font-size: 14px;
+}
+
+.buy-btn:hover {
+  background: #333;
+}
+
+footer {
+  text-align: center;
+  padding: 40px;
+  font-size: 14px;
+  color: #777;
+}
+
+.sizes {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 15px;
+}
+
+/* ---------------- PETALS (REALISTIC) ---------------- */
+
+.petal {
+  position: fixed;
+  width: 12px;
+  height: 12px;
+  background: radial-gradient(ellipse at 35% 35%, #ffe6f0 0%, #ffb3d9 50%, #ff8fc7 100%);
+  clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 50% 75%, 18% 100%, 0% 38%);
+  opacity: 0.85;
+  animation: float 8s ease-in forwards;
+  z-index: 1;
+  pointer-events: none;
+  filter: drop-shadow(0 2px 4px rgba(255, 105, 180, 0.3));
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px) translateX(0px) rotate(0deg);
+    opacity: 0.9;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(120vh) translateX(120px) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+/* keep content above trees */
+header, .hero, .products, footer {
+  position: relative;
+  z-index: 2;
+}
+
 </style>
-
-  
 </head>
 
 <body>
 
-<header>ZENVY</header>
+<header>ZENTREE</header>
 
 <section class="hero">
   <h1>Modern Essentials</h1>
@@ -116,65 +157,74 @@
 
 <section class="products">
 
-  <!-- Shirt 1 -->
-  <div class="product">
-    <img src="tshirt.png" alt="ECRA Classic Tee">
-    <h3>ECRA Classic Tee</h3>
-    <p class="price">$25</p>
-    <p class="sizes">Sizes: S • M • L • XL</p>
-    <a href="https://buy.stripe.com/4gM7sN5Qv8HZ6D71G30Ny00" class="buy-btn">Select Size</a>
-  </div>
+<div class="product">
+<img src="tshirt.png" alt="ECRA Classic Tee">
+<h3>ECRA Classic Tee</h3>
+<p class="price">$25</p>
+<p class="sizes">Sizes: S • M • L • XL</p>
+<a href="https://buy.stripe.com/4gM7sN5Qv8HZ6D71G30Ny00" class="buy-btn">Select Size</a>
+</div>
 
-  <!-- Shirt 2 -->
-  <div class="product">
-    <img src="shirtmin.png" alt="ECRA Minimal Tee">
-    <h3>ECRA Minimal Tee</h3>
-    <p class="price">$28</p>
-    <p class="sizes">Sizes: S • M • L • XL</p>
-    <a href="https://buy.stripe.com/14A8wRa6LbUb5z3esP0Ny01" class="buy-btn">Select Size</a>
-  </div>
+<div class="product">
+<img src="shirtmin.png" alt="ECRA Minimal Tee">
+<h3>ECRA Minimal Tee</h3>
+<p class="price">$28</p>
+<p class="sizes">Sizes: S • M • L • XL</p>
+<a href="https://buy.stripe.com/14A8wRa6LbUb5z3esP0Ny01" class="buy-btn">Select Size</a>
+</div>
 
-  <!-- Sweatshirt 1 -->
-  <div class="product">
-    <img src="crewneck.png" alt="ECRA Oversized Crew">
-    <h3>ECRA Oversized Crew</h3>
-    <p class="price">$55</p>
-    <p class="sizes">Sizes: S • M • L • XL</p>
-    <a href="https://buy.stripe.com/14A8wR92Hgar9PjgAX0Ny02" class="buy-btn">Select Size</a>
-  </div>
+<div class="product">
+<img src="crewneck.png" alt="ECRA Oversized Crew">
+<h3>ECRA Oversized Crew</h3>
+<p class="price">$55</p>
+<p class="sizes">Sizes: S • M • L • XL</p>
+<a href="https://buy.stripe.com/14A8wR92Hgar9PjgAX0Ny02" class="buy-btn">Select Size</a>
+</div>
 
-  <!-- Sweatshirt 2 -->
-  <div class="product">
-    <img src="hoodie.png" alt="ECRA Heavy Hoodie">
-    <h3>ECRA Heavy Hoodie</h3>
-    <p class="price">$52</p>
-    <p class="sizes">Sizes: S • M • L • XL</p>
-    <a href="https://buy.stripe.com/cNi7sNgv94rJ4uZckH0Ny04" class="buy-btn">Select Size</a>
-  </div>
+<div class="product">
+<img src="hoodie.png" alt="ECRA Heavy Hoodie">
+<h3>ECRA Heavy Hoodie</h3>
+<p class="price">$52</p>
+<p class="sizes">Sizes: S • M • L • XL</p>
+<a href="https://buy.stripe.com/cNi7sNgv94rJ4uZckH0Ny04" class="buy-btn">Select Size</a>
+</div>
 
 </section>
 
 <footer>
-  © 2026 Zenvy. All rights reserved.
+© 2026 ZenTree. All rights reserved.
 </footer>
+
+<script>
+function createPetal(){
+  const petal = document.createElement("div");
+  petal.classList.add("petal");
+
+  const x = Math.random() * window.innerWidth;
+  const startY = -20;
+  const randomDelay = Math.random() * 2;
+
+  petal.style.left = x + "px";
+  petal.style.top = startY + "px";
+  petal.style.animationDuration = (7 + Math.random() * 4) + "s";
+  petal.style.animationDelay = randomDelay + "s";
+
+  document.body.appendChild(petal);
+
+  setTimeout(() => petal.remove(), (11 + Math.random() * 4) * 1000);
+}
+
+// Create petals at intervals
+setInterval(() => {
+  createPetal();
+  if(Math.random() > 0.6) createPetal();
+}, 500);
+
+// Initial burst of petals
+for(let i = 0; i < 15; i++){
+  setTimeout(() => createPetal(), i * 100);
+}
+</script>
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
